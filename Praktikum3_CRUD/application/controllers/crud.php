@@ -12,7 +12,7 @@ class Crud extends CI_Controller{
     }
     
     /*
-    | Pada index, merupakan tampilan yang akan di parsing ke view dengan mengambil data dari database
+    | Pada index, merupakan syntax yang akan di parsing ke view dengan mengambil data dari database
     | 
     */
     	function index(){

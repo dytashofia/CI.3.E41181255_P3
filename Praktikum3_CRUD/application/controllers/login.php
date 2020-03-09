@@ -11,7 +11,7 @@ class Login extends CI_Controller{
 	function index(){
 		$this->load->view('view_login');
 	}
- 
+ // function untuk aksi login, yaitu sebagai aksi setelah username dan password di inputkan
 	function aksi_login(){
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
@@ -20,10 +20,11 @@ class Login extends CI_Controller{
 			'password' => md5($password)
             );
             
-        // berfungsi untuk melakukan pengecekan, apakah username dan pssword yang dimasukkan salah atau benar
+        // berfungsi untuk melakukan pengecekan, apakah username dan password yang dimasukkan salah atau benar
 		$cek = $this->m_login->cek_login("admin",$where)->num_rows();
 		if($cek > 0){
- 
+
+			//setelah data diinputkan, maka akan disimpandalam sebuah sesi 
 			$data_session = array(
 				'nama' => $username,
 				'status' => "login"
